@@ -4,7 +4,7 @@ const hbs = require('hbs');
 
 const publicPath = path.join(__dirname, '/public');
 
-
+const port = process.env.PORT || 3000;
 var app = express();
 
 // var restify = require('restify');
@@ -102,4 +102,6 @@ app.get('/bad', (req, res) => {
   });
 });
 
-app.listen(3000);
+app.listen(port, () => {
+  console.log(`server slcuha na porcie: ${port}`);
+});
